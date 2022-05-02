@@ -6,7 +6,7 @@ document.querySelector("#navbar").innerHTML = navbar()
     let appendbox = document.querySelector("#detailed_news")
     appendbox.innerHTML = null;
     let data = JSON.parse(localStorage.getItem("newsdata"))
-    
+    console.log(data)
         let box = document.createElement("div")
         box.id = "box"
         let box1 = document.createElement("div")

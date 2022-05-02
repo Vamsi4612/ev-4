@@ -60,7 +60,7 @@ function appenddata2(){
     let data = JSON.parse(localStorage.getItem("news"))
     data.forEach(({urlToImage,title,description})=>{
         let box = document.createElement("div")
-        box.id = "box"
+        box.id = "box3"
         box.class = "news"
         let box1 = document.createElement("div")
         let image = document.createElement("img")

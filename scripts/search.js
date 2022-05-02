@@ -25,18 +25,18 @@ function main(){
 
 appenddata2()
 
-document.querySelector("#box").addEventListener("click" , storedata)
+document.querySelector("#box3").addEventListener("click" , storedata)
 
 async function storedata(url){
-    let arr = []
+    
     let newsdata = {
         image : document.querySelector("#img1").src,
         title : document.querySelector("#title").innerHTML,
         description : document.querySelector("#desc").innerHTML
 
     }
-    arr.push(newsdata)
-    localStorage.setItem("newsdata" , JSON.stringify( arr))
+    
+    localStorage.setItem("newsdata" , JSON.stringify( newsdata))
     window.location.href="news.html"
 }
 
