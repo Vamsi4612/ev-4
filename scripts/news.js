@@ -6,14 +6,15 @@ document.querySelector("#navbar").innerHTML = navbar()
     let appendbox = document.querySelector("#detailed_news")
     appendbox.innerHTML = null;
     let data = JSON.parse(localStorage.getItem("newsdata"))
-    console.log(data)
+    
+    
         let box = document.createElement("div")
         box.id = "box"
-        let box1 = document.createElement("div")
+        // let box1 = document.createElement("div")
         let image = document.createElement("img")
-        image.src = data.image
+        image.src = data.urlToImage
         image.id = "img1"
-        box1.append(image)
+        // box1.append(image)
         let box2 = document.createElement("div")
         let name = document.createElement("p")
         name.innerText=data.title
@@ -22,6 +23,6 @@ document.querySelector("#navbar").innerHTML = navbar()
         des.innerText=data.description
         des.id = "desc"
         box2.append(name,des)
-        box.append(box1,box2)
+        box.append(image,box2)
         appendbox.append(box)
     

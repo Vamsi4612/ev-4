@@ -5,8 +5,12 @@ function navbar(){
   <input type="text" id="search_input" placeholder="Search news">`
 }
 
-async function fetchnews(url){
+
+async function fetchnews(code){
     try{
+
+    const url = `https://masai-mock-api.herokuapp.com/news/top-headlines?country=${code}`
+    
     const res = await fetch(url)
     const data = await res.json()
     // console.log(data.articles)
@@ -55,13 +59,15 @@ function appenddata(data,appendbox){
     })
 }
 function appenddata2(){
-    let appendbox = document.querySelector("#results")
+    var appendbox = document.querySelector("#results")
     appendbox.innerHTML = null;
-    let data = JSON.parse(localStorage.getItem("news"))
+    var data = JSON.parse(localStorage.getItem("news"))
+    
     data.forEach(({urlToImage,title,description})=>{
-        let box = document.createElement("div")
-        box.id = "box3"
-        box.class = "news"
+        var box = document.createElement("div")
+
+        box.className = "news"
+        
         let box1 = document.createElement("div")
         let image = document.createElement("img")
         image.src = urlToImage
